@@ -15,6 +15,7 @@ class BookController extends Controller
     {
         $title = $request->input('title');
 
+        // El metodo title es el metodo scopeTitle
         $books = Book::when($title, fn ($query, $title) => $query->title($title))->get();
 
         return view('books.index', ['books' => $books]);
