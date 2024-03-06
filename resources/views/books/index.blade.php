@@ -40,7 +40,7 @@
                 </div>
                 <div>
                   <div class="book-rating">
-                    {{ $book->reviews_avg_rating }} <!-- Seguir editando -->
+                    {{ number_format($book->reviews_avg_rating, 1) }}
                   </div>
                   <div class="book-review-count">
                     out of {{ $book->reviews_count }} reviews <!-- Seguir editando -->
