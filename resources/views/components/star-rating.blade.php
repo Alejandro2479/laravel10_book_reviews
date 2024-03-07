@@ -1,3 +1,7 @@
-<div>
-    <!-- Let all your things have their places; let each part of your business have its time. - Benjamin Franklin -->
-</div>
+@if($rating)
+    @for($i = 1; $i <= 5; $i++)
+        {{ $i <= round($rating) ? '★' : '☆' }}
+    @endfor
+@else
+No rating added yet
+@endif
