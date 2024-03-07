@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ use App\Http\Controllers\BookController;
 Route::resource('books', BookController::class);
 
 Route::get('/', fn () => redirect()->route('books.index'));
+
+Route::resource('books.reviews', ReviewController::class)->scoped(['review' => 'book']);
